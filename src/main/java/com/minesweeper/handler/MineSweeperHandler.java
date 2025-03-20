@@ -33,7 +33,7 @@ public class MineSweeperHandler {
     }
 
     private void playGame() {
-        while (game.getGameStatus() != GameStatus.GAME_LOST) {
+        while (game.getGameStatus() == GameStatus.IN_PROGRESS) {
             System.out.println(game.getGrid().generateGridDisplayString(false));
             System.out.println("Select a square to reveal (e.g. A1):");
             String playerInput = getPlayerMove();

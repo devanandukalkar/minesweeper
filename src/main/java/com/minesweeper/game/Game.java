@@ -13,7 +13,7 @@ import java.util.Set;
 public class Game {
     private final Grid grid;
     private int minesCount;
-    private GameStatus gameStatus = GameStatus.IN_PROGRESS;
+    private GameStatus gameStatus;
 
     public Game(int gridSize) {
         this.grid = new Grid(gridSize);
@@ -22,6 +22,7 @@ public class Game {
     public void initializeGame(Set<Position> minePositions) {
         grid.placeMinesOnGrid(minePositions);
         this.minesCount = minePositions.size();
+        this.gameStatus = GameStatus.IN_PROGRESS;
     }
 
     /**
